@@ -1,0 +1,47 @@
+
+function updateForm() {
+    const mainSelection = document.getElementById('mainSelection').value;
+
+    // Hide all sections initially
+    document.getElementById('documentsSection').style.display = 'none';
+    document.getElementById('booksSection').style.display = 'none';
+    document.getElementById('thesisSection').style.display = 'none';
+    document.getElementById('certificatesCardsSection').style.display = 'none';
+    // Hide other sections like posters, visiting cards, etc.
+
+    // Show the relevant section based on the main selection
+    if (mainSelection === 'documents') {
+        document.getElementById('documentsSection').style.display = 'block';
+    } else if (mainSelection === 'books') {
+        document.getElementById('booksSection').style.display = 'block';
+    } else if (mainSelection === 'thesis') {
+        document.getElementById('thesisSection').style.display = 'block';
+    } else if (mainSelection === 'certificatesCards') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'postersSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'visitingCardsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'businessCardsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'marriageCardsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'stickersLabelsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'pamphletsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'journalsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    else if (mainSelection === 'omrSheetsSection') {
+        document.getElementById('certificatesCardsSection').style.display = 'block';
+    }
+    // Add conditions for other sections like posters, visiting cards, etc.
+}

@@ -1,0 +1,682 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Printing Express</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHt0A93w35dYTsvhLPVnYs9e5tHfGJv0vKxVfELGroGkvsg+p" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary py-2">
+        <div class="container-fluid navbar-light">
+            <a href="#"><img src="/img/logo.png" class="im-n"></a>
+          <a class="navbar-brand" href="index.html">Printing Express</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end nav-underline nav-button" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link  active nav-underline" href="Calculator.html">Calculator</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="upload.html">Upload</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user">User</i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="login.html">Login / Sign Up</a></li>
+                  <li><a class="dropdown-item" href="#">Orders</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Setings</a></li>
+                </ul>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      
+
+      <!--here the navigation work ends and it is going to be run in all the pages same -->
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 20px;">
+      <div class="calculator">
+        <!-- Main Product Type Selection -->
+    <!-- Main Selection for Product Types -->
+    <div class="container my-5">
+      <h2>Select Your Product</h2>
+      <label for="mainSelection">Select Main Product Type:</label>
+      <select id="mainSelection" class="form-select">
+          <option value="">Select Product Type</option>
+          <option value="documents">Documents</option>
+          <option value="books">Books</option>
+          <option value="thesis">Thesis & Dissertation</option>
+          <option value="certificatesCards">Certificates & Cards</option>
+          <option value="posters">Posters</option>
+          <option value="visitingCards">Visiting Cards</option>
+          <option value="businessCards">Business Cards</option>
+          <option value="marriageCards">Marriage Cards</option>
+          <option value="stickersLabels">Stickers & Labels</option>
+          <option value="pamphlets">Pamphlets</option>
+          <option value="journals">Journals</option>
+          <option value="omrSheets">OMR Sheets</option>
+      </select>
+
+      <!-- Dynamic Sections Based on Product Type -->
+      <div id="dynamicInputs">
+          <!-- Documents Section -->
+          <div id="documentsSection" class="mt-4" style="display: none;">
+              <h4>Documents</h4>
+              <label for="documentType">Select Document Type:</label>
+              <select id="documentType">
+                  <option value="pdfPrint">PDF PRINT</option>
+                  <option value="annualReport">ANNUAL REPORT PRINTING</option>
+                  <option value="fitnessPlan">FITNESS PLAN PRINTING</option>
+                  <option value="legalDocument">LEGAL DOCUMENT PRINT</option>
+                  <!-- Add all other document types here -->
+              </select>
+      
+              <label for="Dpages">Number of Pages:</label>
+              <input type="number" id="Dpages" min="1" value="1">
+      
+              <label for="Dcopies">Number of Copies:</label>
+              <input type="number" id="Dcopies" min="1" value="1">
+      
+              <label for="paperSize">Paper Size:</label>
+              <select id="paperSize">
+                  <option value="a4">A4</option>
+                  <option value="a5">A5</option>
+                  <option value="b5">B5</option>
+              </select>
+      
+              <label for="paperQuality">Paper Quality:</label>
+              <select id="paperQuality">
+                  <option value="75GSMNormal">75GSM NORMAL PAPER</option>
+                  <option value="75GSMPremium">75GSM PREMIUM PAPER</option>
+                  <option value="85GSMBond">85GSM BOND PAPER</option>
+                  <!-- Add all other paper qualities here -->
+              </select>
+      
+              <label for="printColor">Print Color:</label>
+              <select id="printColor">
+                  <option value="blackWhite">Black and White</option>
+                  <option value="colored">Colored</option>
+              </select>
+      
+              <label for="cover">Cover Options:</label>
+              <select id="cover">
+                  <option value="none">No Cover</option>
+                  <option value="colored">Colored Cover</option>
+                  <option value="thickColored">Thick Colored Cover</option>
+              </select>
+      
+              <label for="printSide">Print Side:</label>
+              <select id="printSide">
+                  <option value="single">Single Side</option>
+                  <option value="both">Both Side</option>
+              </select>
+      
+              <label for="bindingOptions">Binding Options:</label>
+              <select id="bindingOptions">
+                  <option value="noBinding">NO BINDING</option>
+                  <option value="spiralBinding">SPIRAL BINDING</option>
+                  <!-- Add all other binding options here -->
+              </select>
+          </div>
+
+          <!-- Books Section -->
+          <div id="booksSection" class="mt-4" style="display: none;">
+            <h4>Books</h4>
+            <select id="bookType">
+              <option value="paperback">PAPERBACK / SOFTCOVER/SOFTBACK BOOKS</option>
+              <option value="hardbound">HARDBOUND / HARDBACK BOOKS</option>
+              <option value="E-BOOK">E-BOOK PRINTING</option>
+              <option value="dSTUDY">STUDY MATERIAL/GUIDE PRINTING</option>
+              <option value="TRAINING">TRAINING/INSTRUCTION MANUAL PRINTING</option>
+              <option value="SCHOOL">SCHOOL BOOK PRINTING</option>
+              <option value="COMIC">COMIC BOOK PRINTING</option>
+              <option value="FAMILY">FAMILY HISTORY BOOK PRINTING</option>
+              <option value="BULK">BULK BOOK PRINTING</option>
+              <option value="MAGZINES">MAGZINES</option>
+              <option value="GAMING">GAMING RULESBOOK</option>
+              <option value="CHILDREN">CHILDREN BOOK</option>
+              <option value="RTFOLIOS">PORTFOLIOS</option>
+              <option value="YEARBOOK">YEARBOOK PRINT</option>
+              <option value="NTATIONS">PRESENTATIONS</option>
+              <option value="PROPOSAL">PROPOSAL PRINT</option>
+              <option value="RUCTIONS">INSTRUCTIONS PRINT</option>
+              <!-- Add all other book types here -->
+          </select>
+
+          
+          <label for="pages">Number of Pages:</label>
+          <input type="number" id="bookPages" min="1" value="1">
+  
+          <label for="bookCopies">Number of Copies:</label>
+          <input type="number" id="bookCopies" min="1" value="1">
+  
+          <label for="bookPaperSize">Paper Size:</label>
+          <select id="bookPaperSize">
+              <option value="a4">A4</option>
+              <option value="a5">A5</option>
+              <option value="b5">B5</option>
+          </select>
+  
+          <label for="bookPaperQuality">Paper Quality:</label>
+          <select id="bookPaperQuality">
+              <option value="75GSMNormal">75GSM NORMAL PAPER</option>
+              <option value="170GSMGlossy">170GSM GLOSSY PAPER</option>
+              <!-- Add all other paper qualities here -->
+          </select>
+  
+          <label for="bookPrintColor">Print Color:</label>
+          <select id="bookPrintColor">
+              <option value="blackWhite">Black and White</option>
+              <option value="colored">Colored</option>
+          </select>
+        </div>
+    
+
+          <!-- thesis Section -->
+          <div id="thesisSection" class="mt-4" style="display: none;">
+            <h4>thesis</h4>
+            <label for="thesisType">Select Thesis Type:</label>
+            <select id="thesisType">
+                <option value="thesisPrint">THESIS PRINT</option>
+                <option value="dissertationPrint">DISSERTATION PRINT</option>
+                <!-- Add other thesis types -->
+            </select>
+    
+            <!-- The rest of the fields are similar to the Document section -->
+            <label for="pages">Number of Pages:</label>
+            <input type="number" id="pages" min="1" value="1">
+    
+            <label for="copies">Number of Copies:</label>
+            <input type="number" id="copies" min="1" value="1">
+    
+            <label for="paperSize">Paper Size:</label>
+            <select id="paperSize">
+                <option value="a4">A4</option>
+                <option value="a5">A5</option>
+                <option value="b5">B5</option>
+            </select>
+    
+            <label for="paperQuality">Paper Quality:</label>
+            <select id="paperQuality">
+                <option value="75GSMNormal">75GSM NORMAL PAPER</option>
+                <option value="75GSMPremium">75GSM PREMIUM PAPER</option>
+                <option value="85GSMBond">85GSM BOND PAPER</option>
+                <!-- Add all other paper qualities here -->
+            </select>
+    
+            <label for="printColor">Print Color:</label>
+            <select id="printColor">
+                <option value="blackWhite">Black and White</option>
+                <option value="colored">Colored</option>
+            </select>
+    
+            <label for="cover">Cover Options:</label>
+            <select id="cover">
+                <option value="none">No Cover</option>
+                <option value="colored">Colored Cover</option>
+                <option value="thickColored">Thick Colored Cover</option>
+            </select>
+    
+            <label for="printSide">Print Side:</label>
+            <select id="printSide">
+                <option value="single">Single Side</option>
+                <option value="both">Both Side</option>
+            </select>
+    
+            <label for="bindingOptions">Binding Options:</label>
+            <select id="bindingOptions">
+                <option value="noBinding">NO BINDING</option>
+                <option value="spiralBinding">SPIRAL BINDING</option>
+                <!-- Add all other binding options here -->
+            </select>
+    
+            
+        </div>
+
+    <!-- Certificates & Cards Section -->
+    <div id="certificatesCardsSection" class="mt-4" style="display: none;">
+      <h4>Certificates & Cards</h4>
+      <label for="cardType">Select Card Type:</label>
+      <select id="cardType">
+          <option value="noteCards">Note Cards</option>
+          <option value="certificatePrinting">Certificate Printing</option>
+          <option value="flashCards">Flash Cards</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <select id="quantity">
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <!-- Add other quantity options -->
+      </select>
+
+      <label for="printSide">Print Side:</label>
+      <select id="printSide">
+          <option value="single">Single Side</option>
+          <option value="both">Both Side</option>
+      </select>
+
+      <label for="lamination">Lamination Type:</label>
+      <select id="lamination">
+          <option value="matt">Matt Lamination</option>
+          <option value="gloss">Gloss Lamination</option>
+      </select>
+
+      <label for="corner">Corner Type:</label>
+      <select id="corner">
+          <option value="normal">Normal</option>
+          <option value="round">Round</option>
+      </select>
+  </div>
+
+
+
+    <!-- Add other sections like Posters, Visiting Cards, etc. here -->
+
+
+    <!-- Posters Section -->
+<div id="postersSection" style="display: none;">
+  <label for="posterType">Select Poster Type:</label>
+  <select id="posterType">
+      <option value="normal">Normal</option>
+      <option value="framed">Framed</option>
+      <option value="graphicArt">Graphic and Art Prints</option>
+  </select>
+
+  <label for="posterCopies">Number of Copies:</label>
+  <input type="number" id="posterCopies" min="1" value="1">
+
+  <label for="posterPaperSize">Paper Size:</label>
+  <select id="posterPaperSize">
+      <option value="a4">A4</option>
+      <option value="a5">A5</option>
+      <option value="b5">B5</option>
+  </select>
+
+  <label for="posterPaperQuality">Paper Quality:</label>
+  <select id="posterPaperQuality">
+      <option value="170GSMGlossy">170GSM GLOSSY PAPER</option>
+      <option value="170GSMMatte">170GSM MATTE PAPER</option>
+      <option value="225GSMGlossy">225GSM GLOSSY PAPER</option>
+      <option value="225GSMMatte">225GSM MATTE PAPER</option>
+      <option value="300GSMGlossy">300GSM GLOSSY PAPER</option>
+      <option value="300GSMMatte">300GSM MATTE PAPER</option>
+  </select>
+
+  <label for="posterPrintColor">Print Color:</label>
+  <select id="posterPrintColor">
+      <option value="blackWhite">Black and White</option>
+      <option value="colored">Colored</option>
+  </select>
+</div>
+
+<!-- Visiting Cards Section -->
+<div id="visitingCardsSection" style="display: none;">
+  <label for="visitingCardQuantity">Quantity:</label>
+  <select id="visitingCardQuantity">
+      <option value="100">100</option>
+      <option value="300">300</option>
+      <option value="500">500</option>
+      <option value="800">800</option>
+      <option value="1000">1000</option>
+      <option value="1500">1500</option>
+  </select>
+
+  <label for="visitingCardSize">Card Size:</label>
+  <select id="visitingCardSize" disabled>
+      <option value="89x51mm">89x51mm</option>
+  </select>
+
+  <label for="visitingCardPaperQuality">Paper Quality:</label>
+  <select id="visitingCardPaperQuality" disabled>
+      <option value="300GSMCoated">300GSM Coated</option>
+  </select>
+
+  <label for="visitingCardPrintSide">Print Side:</label>
+  <select id="visitingCardPrintSide">
+      <option value="single">Single Side</option>
+      <option value="both">Both Side</option>
+  </select>
+
+  <label for="visitingCardLamination">Lamination Type:</label>
+  <select id="visitingCardLamination">
+      <option value="matt">Matt Lamination</option>
+      <option value="gloss">Gloss Lamination</option>
+  </select>
+
+  <label for="visitingCardCorners">Corner Type:</label>
+  <select id="visitingCardCorners">
+      <option value="normal">Normal</option>
+      <option value="rounded">Rounded</option>
+  </select>
+</div>
+
+<!-- Business Cards Section -->
+<div id="businessCardsSection" style="display: none;">
+  <!-- Business cards section is the same as Visiting Cards -->
+  <label for="businessCardQuantity">Quantity:</label>
+  <select id="businessCardQuantity">
+      <option value="100">100</option>
+      <option value="300">300</option>
+      <option value="500">500</option>
+      <option value="800">800</option>
+      <option value="1000">1000</option>
+      <option value="1500">1500</option>
+  </select>
+
+  <label for="businessCardSize">Card Size:</label>
+  <select id="businessCardSize" disabled>
+      <option value="89x51mm">89x51mm</option>
+  </select>
+
+  <label for="businessCardPaperQuality">Paper Quality:</label>
+  <select id="businessCardPaperQuality" disabled>
+      <option value="300GSMCoated">300GSM Coated</option>
+  </select>
+
+  <label for="businessCardPrintSide">Print Side:</label>
+  <select id="businessCardPrintSide">
+      <option value="single">Single Side</option>
+      <option value="both">Both Side</option>
+  </select>
+
+  <label for="businessCardLamination">Lamination Type:</label>
+  <select id="businessCardLamination">
+      <option value="matt">Matt Lamination</option>
+      <option value="gloss">Gloss Lamination</option>
+  </select>
+
+  <label for="businessCardCorners">Corner Type:</label>
+  <select id="businessCardCorners">
+      <option value="normal">Normal</option>
+      <option value="rounded">Rounded</option>
+  </select>
+</div>
+
+<!-- Marriage Cards Section -->
+<div id="marriageCardsSection" style="display: none;">
+  <p>This option redirects to a custom webpage for Marriage Card creation.</p>
+  <a href="your-custom-marriage-card-url">Go to Marriage Cards Page</a>
+</div>
+
+<!-- Stickers and Labels Section -->
+<div id="stickersLabelsSection" style="display: none;">
+  <p>This option redirects to a custom webpage for Stickers and Labels creation.</p>
+  <a href="your-custom-stickers-labels-url">Go to Stickers and Labels Page</a>
+</div>
+
+<!-- Pamphlets Section -->
+<div id="pamphletsSection" style="display: none;">
+  <label for="pamphletType">Select Pamphlet Type:</label>
+  <select id="pamphletType">
+      <option value="normal">Normal</option>
+      <option value="framed">Framed</option>
+      <option value="graphicArt">Graphic and Art Prints</option>
+  </select>
+
+  <label for="pamphletCopies">Number of Copies:</label>
+  <input type="number" id="pamphletCopies" min="1" value="1">
+
+  <label for="pamphletPaperSize">Paper Size:</label>
+  <select id="pamphletPaperSize">
+      <option value="a4">A4</option>
+      <option value="a5">A5</option>
+      <option value="b5">B5</option>
+  </select>
+
+  <label for="pamphletPaperQuality">Paper Quality:</label>
+  <select id="pamphletPaperQuality">
+      <option value="170GSMGlossy">170GSM GLOSSY PAPER</option>
+      <option value="170GSMMatte">170GSM MATTE PAPER</option>
+      <option value="225GSMGlossy">225GSM GLOSSY PAPER</option>
+      <option value="225GSMMatte">225GSM MATTE PAPER</option>
+      <option value="300GSMGlossy">300GSM GLOSSY PAPER</option>
+      <option value="300GSMMatte">300GSM MATTE PAPER</option>
+  </select>
+
+  <label for="pamphletPrintColor">Print Color:</label>
+  <select id="pamphletPrintColor">
+      <option value="blackWhite">Black and White</option>
+      <option value="colored">Colored</option>
+  </select>
+</div>
+
+<!-- Journals Section (Same as Documents Section) -->
+<div id="journalsSection" style="display: none;">
+  <!-- Journals section can be the same as the documents section, with fields like number of pages, print type, etc. -->
+
+        
+  <label for="pages">Number of Pages:</label>
+  <input type="number" id="pages" min="1" value="1">
+
+  <label for="copies">Number of Copies:</label>
+  <input type="number" id="copies" min="1" value="1">
+
+  <label for="paperSize">Paper Size:</label>
+  <select id="paperSize">
+      <option value="a4">A4</option>
+      <option value="a5">A5</option>
+      <option value="b5">B5</option>
+  </select>
+
+  <label for="paperQuality">Paper Quality:</label>
+  <select id="paperQuality">
+      <option value="75GSMNormal">75GSM NORMAL PAPER</option>
+      <option value="75GSMPremium">75GSM PREMIUM PAPER</option>
+      <option value="85GSMBond">85GSM BOND PAPER</option>
+      <!-- Add all other paper qualities here -->
+  </select>
+
+  <label for="printColor">Print Color:</label>
+  <select id="printColor">
+      <option value="blackWhite">Black and White</option>
+      <option value="colored">Colored</option>
+  </select>
+
+  <label for="cover">Cover Options:</label>
+  <select id="cover">
+      <option value="none">No Cover</option>
+      <option value="colored">Colored Cover</option>
+      <option value="thickColored">Thick Colored Cover</option>
+  </select>
+
+  <label for="printSide">Print Side:</label>
+  <select id="printSide">
+      <option value="single">Single Side</option>
+      <option value="both">Both Side</option>
+  </select>
+
+  <label for="bindingOptions">Binding Options:</label>
+  <select id="bindingOptions">
+      <option value="noBinding">NO BINDING</option>
+      <option value="spiralBinding">SPIRAL BINDING</option>
+      <!-- Add all other binding options here -->
+  </select>
+</div>
+
+
+<!-- OMR Sheets Section -->
+<div id="omrSheetsSection" style="display: none;">
+  <label for="omrCopies">Number of Copies:</label>
+  <input type="number" id="omrCopies" min="1" value="1">
+
+  <label for="omrPaperSize">Paper Size:</label>
+  <select id="omrPaperSize">
+      <option value="a4">A4</option>
+      <option value="a5">A5</option>
+      <option value="b5">B5</option>
+  </select>
+
+  <label for="omrPaperQuality">Paper Quality:</label>
+  <select id="omrPaperQuality">
+      <option value="170GSMGlossy">170GSM GLOSSY PAPER</option>
+      <option value="170GSMMatte">170GSM MATTE PAPER</option>
+      <option value="225GSMGlossy">225GSM GLOSSY PAPER</option>
+      <option value="225GSMMatte">225GSM MATTE PAPER</option>
+      <option value="300GSMGlossy">300GSM GLOSSY PAPER</option>
+      <option value="300GSMMatte">300GSM MATTE PAPER</option>
+  </select>
+
+  <label for="omrPrintColor">Print Color:</label>
+  <select id="omrPrintColor">
+      <option value="blackWhite">Black and White</option>
+      <option value="colored">Colored</option>
+  </select>
+</div>
+
+<div style="display: grid; place-items: center;">
+<!-- Button to calculate price -->
+<button id="calculateButton" class="btn btn-primary mt-3" style="background-color: aquamarine; color: black; border:none;">Calculate Price</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+    <!-- After form sections -->
+     <div style="padding-bottom: 10px; ">
+      <div id="totalPrice" class="mt-4" style="background-color: aquamarine; text-align: center; padding: 10px; ">
+         Total Price: ₹ 0.00
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+      
+  
+
+
+
+      <script src="/java/cal.js"></script>
+
+      
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Popular Products</h3>
+          <ul>
+            <li>Visiting Cards</li>
+            <li>ID Cards</li>
+            <li>Letterheads</li>
+            <li>Envelopes #10</li>
+            <li>A4 document printing</li>
+            <li>Visiting card printing</li>
+            <li>marriage card printing</li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Customer Support</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Paper Product Reprint/Refund Policy</a></li>
+            <li><a href="#">Replacement/Refund Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li>PrintSmart</li>
+            <li>A4 all document printing</li>
+            <li>Corporate Solutions</li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Company Info</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Printing Express Blog</a></li>
+            <li><a href="#">Print Plus Programs</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-column">
+          <h3>Follow us on</h3>
+          <div class="social-icons" style="padding-bottom: 15px;">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <h3>Payment Methods</h3>
+          <div class="payment-methods">
+            <img src="/img/visa.jpg" alt="Visa">
+            <img src="/img/mastercard.jpg" alt="Mastercard">
+            <img src="/img/Rupay.jpg" alt="RuPay">
+            <img src="/img/Upi.jpg" alt="UPI">
+            <img src="/img/netbanking.jpg" alt="Net Banking">
+            <img src="/img/Payament.jpg" alt="Wallets">
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Parihat Group Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    </body>
+  </html>
